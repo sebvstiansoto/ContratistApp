@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: #1e293b; background: #f8fafc; -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #f8fafc; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+}
+
+@layer utilities {
+  .border-1\.5 { border-width: 1.5px; }
+}
+
+@media print {
+  body > *:not(#print-root) { visibility: hidden; }
+  #print-root, #print-root * { visibility: visible; }
+  #print-root { position: fixed; inset: 0; background: white; padding: 2rem; z-index: 9999; }
+}
